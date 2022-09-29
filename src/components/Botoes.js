@@ -9,7 +9,7 @@ const botoes = [
     return(
         <>
         <DivBotoes>
-        {botoes.map((b)=><Botao>{b.texto}</Botao>)}
+            {botoes.map((b)=><Botao className={b.cor}>{b.texto}</Botao>)}
         </DivBotoes>
         </>
     )
@@ -32,8 +32,19 @@ const Botao = styled.button`
     justify-content: center;
     text-align: center;
     color: #FFFFFF;
-    background: blue;
     border-radius: 5px;
-    border: 1px solid blue;
     padding:5px;
+
+    &.vermelho {
+        background:#FF3030;
+        border: 1px solid #FF3030;
+       }
+    &.verde {
+        background: #2FBE34;
+        border: 1px solid #2FBE34;
+       }
+    &.amarelo {
+        background: #FF922E;
+        border: 1px solid #FF922E;
+       }
 `;
