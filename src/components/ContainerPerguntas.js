@@ -1,20 +1,15 @@
 import Pergunta from "./Pergunta"
 
 export default function ContainerPerguntas(props) {
-    const {perguntas,mostraPergunta,setMostraPergunta,cor,setCor,vira,setVira}= props;
+    const {perguntas}= props;
     return (
         <>
-        {perguntas.map((p)=> 
+        {perguntas.map((p,index)=> 
         <Pergunta 
         nome={p.name} 
         pergunta={p.question} 
         resposta={p.question}
-        mostraPergunta={mostraPergunta}
-        setMostraPergunta={setMostraPergunta}
-        cor={cor}
-        setCor={setCor}
-        vira={vira}
-        setVira={setVira}
+        aberto={p.open}
         />
         )}
         </>
