@@ -4,12 +4,12 @@ import ImagemVirar from "../img/seta_virar.png"
 export default function Pergunta(props){
     const {nome,pergunta,resposta,mostraPergunta,setMostraPergunta,cor,setCor,vira,setVira}=props;
     return(
-        <DivPergunta className='aberta'>
+        <DivNomePergunta className='aberta'>
             {pergunta}<img src={ImagemVirar}/>
-        </DivPergunta>
+        </DivNomePergunta>
     )
 }
-const DivPergunta= styled.div`
+const DivNomePergunta= styled.div`
     width: 300px;
 
     &.fechada{
