@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export default function Botoes(){
+export default function Botoes(props){
+    const {mostraPergunta,cor,setCor,vira}= props;
 
     const botoes = [
         {texto:"Não lembrei",cor:"vermelho"},

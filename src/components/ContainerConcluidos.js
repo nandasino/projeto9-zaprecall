@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 import Botoes from "./Botoes"
-export default function ContainerConcluidos() {
+export default function ContainerConcluidos(props) {
+  const {mostraPergunta,cor,setCor,vira}= props;
     return (
         <>
         <Footer>
-          <Botoes/>
+          <Botoes
+          mostraPergunta={mostraPergunta}
+          cor={cor}
+          setCor={setCor}
+          vira={vira}
+          />
           0/4 CONCLUÍDOS
         </Footer>
         </>

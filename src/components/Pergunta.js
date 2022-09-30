@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import play from "../img/seta_play.png"
 export default function Pergunta(props){
-    const {nome,pergunta,resposta}=props;
+    const {nome,pergunta,resposta,mostraPergunta,setMostraPergunta,cor,setCor,vira,setVira}=props;
     return(
-        <DivNomePergunta>
+        <DivPergunta>
             {nome}<img src={play}/>
-        </DivNomePergunta>
+        </DivPergunta>
     )
 }
-const DivNOmePergunta= styled.div`
+const DivPergunta= styled.div`
     width: 300px;
     height: 35px;
     background-color: #FFFFFF;
