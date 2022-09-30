@@ -3,12 +3,12 @@ import play from "../img/seta_play.png"
 export default function Pergunta(props){
     const {nome,pergunta,resposta}=props;
     return(
-        <DivPergunta>
+        <DivNomePergunta>
             {nome}<img src={play}/>
-        </DivPergunta>
+        </DivNomePergunta>
     )
 }
-const DivPergunta= styled.div`
+const DivNOmePergunta= styled.div`
     width: 300px;
     height: 35px;
     background-color: #FFFFFF;
