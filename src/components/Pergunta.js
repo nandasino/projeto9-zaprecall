@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import play from "../img/seta_play.png"
 export default function Pergunta(props){
-    const {nome,pergunta,resposta,mostraPergunta,setMostraPergunta,cor,setCor,vira,setVira}=props;
+    const {nome,pergunta,resposta}=props;
     return(
         <DivPergunta>
             {nome}<img src={play}/>

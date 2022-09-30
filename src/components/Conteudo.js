@@ -5,9 +5,6 @@ import ContainerConcluidos from "./ContainerConcluidos"
 import ContainerPerguntas from "./ContainerPerguntas"
 
 export default function Conteudo(props){
-    const[mostraPergunta,setMostraPergunta]= useState("fechado");
-    const[cor,setCor]=useState("");
-    const[vira,setVira]=useState("frente");
     const {perguntas}=props;
     return(
         <>
@@ -18,15 +15,8 @@ export default function Conteudo(props){
             </LogoContainer>
             <ContainerPerguntas
              perguntas= {perguntas} 
-             cor={cor} setCor={setCor}
-             mostraPergunta={mostraPergunta} setMostraPergunta={setMostraPergunta}
-             vira={vira} setVira={setVira}
              />
-            <ContainerConcluidos
-             cor={cor} setCor={setCor}
-             mostraPergunta={mostraPergunta}
-             vira={vira}           
-            />
+            <ContainerConcluidos/>
         </ScreenContainer>
         </>
     )
