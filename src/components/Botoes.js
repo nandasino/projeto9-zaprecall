@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-export default function Botoes(){
-const botoes = [
-    {texto:"Não lembrei",cor:"vermelho"},
-    {texto:"Quase não lembrei",cor:"amarelo"},
-    {texto:"Zap!",cor:"verde"},
-];
+export default function Botoes(props){
+    const {mostraPergunta,cor,setCor,vira}= props;
+
+    const botoes = [
+        {texto:"Não lembrei",cor:"vermelho"},
+        {texto:"Quase não lembrei",cor:"amarelo"},
+        {texto:"Zap!",cor:"verde"},
+    ];
     return(
         <>
         <DivBotoes>

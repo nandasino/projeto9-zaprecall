@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import logo from "../img/logo.png"
 import ContainerConcluidos from "./ContainerConcluidos"
 import ContainerPerguntas from "./ContainerPerguntas"
 
 export default function Conteudo(props){
+    const[mostraPergunta,setMostraPergunta]= useState("fechado");
+    const[cor,setCor]=useState("");
+    const[vira,setVira]=useState("frente");
     const {perguntas}=props;
     return(
         <>
@@ -12,8 +16,17 @@ export default function Conteudo(props){
               <img src={logo}/>
               <h1>ZapRecall</h1>
             </LogoContainer>
-            <ContainerPerguntas perguntas= {perguntas}/>
-            <ContainerConcluidos/>
+            <ContainerPerguntas
+             perguntas= {perguntas} 
+             cor={cor} setCor={setCor}
+             mostraPergunta={mostraPergunta} setMostraPergunta={setMostraPergunta}
+             vira={vira} setVira={setVira}
+             />
+            <ContainerConcluidos
+             cor={cor} setCor={setCor}
+             mostraPergunta={mostraPergunta}
+             vira={vira}           
+            />
         </ScreenContainer>
         </>
     )
