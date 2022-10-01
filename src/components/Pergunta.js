@@ -14,21 +14,20 @@ function PerguntaAberta(props){
 }
 
 function PerguntaFechada(props){
-    const {setAberta,nome}=props
+    const {nome,index,abrirPergunta}=props
     return(
-    <PerguntaFechadaDiv onClick={()=>setAberta(true)}>
+    <PerguntaFechadaDiv onClick={()=>abrirPergunta(index)}>
         {nome}<img src={ImagemPlay}/>
     </PerguntaFechadaDiv> 
     )
 }
 export default function Pergunta(props){
-    const [aberta,setAberta]=useState(false);   
-    const {nome,pergunta,resposta,aberto}=props;
+    const {nome,index,pergunta,resposta,aberto,abrirPergunta}=props; 
     return(
         <>
-        {aberta===true? 
+        {aberto===true? 
         <PerguntaAberta pergunta={pergunta}/>:
-        <PerguntaFechada setAberta={setAberta} nome={nome}/>
+        <PerguntaFechada nome={nome} index={index} abrirPergunta={abrirPergunta}/>
         }
         </>
     )
