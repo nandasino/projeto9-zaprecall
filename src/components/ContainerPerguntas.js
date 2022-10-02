@@ -27,7 +27,7 @@ export default function ContainerPerguntas(props) {
         nome={p.name} 
         index={index}
         pergunta={p.question} 
-        resposta={p.question}
+        resposta={p.answer}
         aberto={p.open}
         abrirPergunta={abrirPergunta}
         />

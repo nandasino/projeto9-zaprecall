@@ -4,11 +4,12 @@ import ImagemPlay from "../img/seta_play.png"
 import ImagemVirar from "../img/seta_virar.png"
 
 function PerguntaAberta(props){
-    const {pergunta}=props;
+    const {pergunta,resposta}=props;
+    const[girar,setGirar]=useState(false);
     return(
         <PerguntaAbertaDiv>
-            {pergunta}
-            <img src={ImagemVirar}/>
+            {girar===true?resposta:pergunta}
+            <img onClick={()=>setGirar(true)} src={ImagemVirar}/>
         </PerguntaAbertaDiv>
     )
 }
@@ -26,7 +27,7 @@ export default function Pergunta(props){
     return(
         <>
         {aberto===true? 
-        <PerguntaAberta pergunta={pergunta}/>:
+        <PerguntaAberta pergunta={pergunta} resposta={resposta}/>:
         <PerguntaFechada nome={nome} index={index} abrirPergunta={abrirPergunta}/>
         }
         </>
