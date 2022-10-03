@@ -8,9 +8,14 @@ export default function Conteudo(props){
     const {perguntas}=props;
     const [respondidas,setRespondidas]= useState([]);
     const quantidadePerguntas= perguntas.length;
+
     function responderPergunta(resposta,index){
-      setRespondidas([...respondidas,resposta]);
-      console.log(index);
+      if(respondidas.some((element)=>element.index===index)){
+        return;
+      }
+
+      setRespondidas([...respondidas,{resposta:resposta,index:index}]);
+      console.log(respondidas);
   }
 
     return(
