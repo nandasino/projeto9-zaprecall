@@ -5,6 +5,7 @@ import ContainerPerguntas from "./ContainerPerguntas"
 
 export default function Conteudo(props){
     const {perguntas}=props;
+
     return(
         <>
         <ScreenContainer>
@@ -15,8 +16,7 @@ export default function Conteudo(props){
             <ContainerPerguntas
              perguntas= {perguntas} 
              />
-            <ContainerConcluidos     
-            />
+            <ContainerConcluidos/>
         </ScreenContainer>
         </>
     )

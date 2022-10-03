@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import Botoes from "./Botoes"
 export default function ContainerConcluidos() {
     return (
         <>
         <Footer>
-          <Botoes/>
           0/4 CONCLUÍDOS
         </Footer>
         </>

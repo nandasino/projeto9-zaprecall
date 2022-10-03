@@ -4,6 +4,11 @@ import Pergunta from "./Pergunta"
 export default function ContainerPerguntas(props) {
     const {perguntas}= props;
     const [listaPerguntas,setListaPerguntas]=useState(perguntas);
+
+    function responderPergunta(){
+        console.log("responder pergunta")
+    }
+
     function abrirPergunta(index){
         const atualizaPerguntas= perguntas.map((element,indexelement) => {
             if(index===indexelement){
@@ -30,6 +35,7 @@ export default function ContainerPerguntas(props) {
         resposta={p.answer}
         aberto={p.open}
         abrirPergunta={abrirPergunta}
+        responderPergunta={responderPergunta}
         />
         )}
         </>

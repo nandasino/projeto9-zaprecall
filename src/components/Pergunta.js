@@ -2,14 +2,16 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ImagemPlay from "../img/seta_play.png"
 import ImagemVirar from "../img/seta_virar.png"
+import Botoes from './Botoes';
 
 function PerguntaAberta(props){
-    const {pergunta,resposta}=props;
+    const {pergunta,resposta,responderPergunta}=props;
     const[girar,setGirar]=useState(false);
+
     return(
         <PerguntaAbertaDiv>
-            {girar===true?resposta:pergunta}
-            <img onClick={()=>setGirar(true)} src={ImagemVirar}/>
+            {girar===true?resposta :pergunta}
+            {girar===true? <Botoes responderPergunta={responderPergunta}/> : <img onClick={()=>setGirar(true)} src={ImagemVirar}/> }
         </PerguntaAbertaDiv>
     )
 }
@@ -23,11 +25,11 @@ function PerguntaFechada(props){
     )
 }
 export default function Pergunta(props){
-    const {nome,index,pergunta,resposta,aberto,abrirPergunta}=props; 
+    const {nome,index,pergunta,resposta,aberto,abrirPergunta,responderPergunta}=props; 
     return(
         <>
         {aberto===true? 
-        <PerguntaAberta pergunta={pergunta} resposta={resposta}/>:
+        <PerguntaAberta pergunta={pergunta} resposta={resposta} responderPergunta={responderPergunta}/>:
         <PerguntaFechada nome={nome} index={index} abrirPergunta={abrirPergunta}/>
         }
         </>
