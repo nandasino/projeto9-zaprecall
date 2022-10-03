@@ -2,24 +2,7 @@ import { useState } from "react";
 import Pergunta from "./Pergunta"
 
 export default function ContainerPerguntas(props) {
-    const {perguntas,responderPergunta}= props;
-    const [listaPerguntas,setListaPerguntas]=useState(perguntas);
-
-    function abrirPergunta(index){
-        const atualizaPerguntas= perguntas.map((element,indexelement) => {
-            if(index===indexelement){
-                return(
-                    {...element,open :true}
-                )
-            }
-            else{
-                return (
-                    {...element,open:false}
-                )
-            }
-        });
-    setListaPerguntas(atualizaPerguntas);
-    }
+    const {perguntas,responderPergunta,listaPerguntas,abrirPergunta}= props;
 
     return (
         <>

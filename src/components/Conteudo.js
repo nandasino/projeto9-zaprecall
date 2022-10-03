@@ -16,7 +16,26 @@ export default function Conteudo(props){
 
       setRespondidas([...respondidas,{resposta:resposta,index:index}]);
       console.log(respondidas);
-  }
+    }
+
+    const [listaPerguntas,setListaPerguntas]=useState(perguntas);
+
+    function abrirPergunta(index,status=true){
+        const atualizaPerguntas= perguntas.map((element,indexelement) => {
+            if(index===indexelement){
+                return(
+                    {...element,open :status}
+                )
+            }
+            else{
+                return (
+                    {...element,open:false}
+                )
+            }
+        });
+    setListaPerguntas(atualizaPerguntas);
+    }
+
 
     return(
         <>
@@ -28,6 +47,8 @@ export default function Conteudo(props){
             <ContainerPerguntas
              perguntas= {perguntas} 
              responderPergunta={responderPergunta}
+             abrirPergunta={abrirPergunta}
+             listaPerguntas={listaPerguntas}
              />
             <ContainerConcluidos quantidadePerguntas={quantidadePerguntas} respondidas={respondidas.length}/>
         </ScreenContainer>

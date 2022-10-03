@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default function Botoes(props){
-    const {responderPergunta,index}=props;
+    const {responderPergunta,index,abrirPergunta}=props;
     const botoes = [
         {texto:"Não lembrei",cor:"vermelho"},
         {texto:"Quase não lembrei",cor:"amarelo"},
@@ -10,7 +10,10 @@ export default function Botoes(props){
     return(
         <>
         <DivBotoes>
-            {botoes.map((b)=><Botao onClick={()=>responderPergunta(b.cor,index)} className={b.cor}>{b.texto}</Botao>)}
+            {botoes.map((b)=><Botao onClick={()=>
+                {responderPergunta(b.cor,index) 
+                abrirPergunta(index,false)}} 
+                className={b.cor}>{b.texto}</Botao>)}
         </DivBotoes>
         </>
     )
