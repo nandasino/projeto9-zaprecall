@@ -9,6 +9,10 @@ export default function Conteudo(props){
     const [respondidas,setRespondidas]= useState([]);
     const quantidadePerguntas= perguntas.length;
 
+    let dataPerguntas = perguntas.map((value) => ({
+      ...value
+    }));    
+
     function responderPergunta(resposta,index){
       if(respondidas.some((element)=>element.index===index)){
         return;
@@ -18,13 +22,13 @@ export default function Conteudo(props){
       console.log(respondidas);
     }
 
-    const [listaPerguntas,setListaPerguntas]=useState(perguntas);
+    const [listaPerguntas,setListaPerguntas]=useState(dataPerguntas);
 
-    function abrirPergunta(index,status=true){
-        const atualizaPerguntas= perguntas.map((element,indexelement) => {
+    function abrirPergunta(index,estado=true,resposta){
+        const atualizaPerguntas= listaPerguntas.map((element,indexelement) => {
             if(index===indexelement){
                 return(
-                    {...element,open :status}
+                    {...element,open:estado, check:resposta}
                 )
             }
             else{
@@ -33,7 +37,7 @@ export default function Conteudo(props){
                 )
             }
         });
-    setListaPerguntas(atualizaPerguntas);
+    setListaPerguntas([...atualizaPerguntas]);
     }
 
 

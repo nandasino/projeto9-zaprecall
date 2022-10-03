@@ -15,6 +15,7 @@ export default function ContainerPerguntas(props) {
         aberto={p.open}
         abrirPergunta={abrirPergunta}
         responderPergunta={responderPergunta}
+        check={p.check}
         />
         )}
         </>

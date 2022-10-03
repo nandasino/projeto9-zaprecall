@@ -12,7 +12,7 @@ export default function Botoes(props){
         <DivBotoes>
             {botoes.map((b)=><Botao onClick={()=>
                 {responderPergunta(b.cor,index) 
-                abrirPergunta(index,false)}} 
+                abrirPergunta(index,false,b.cor)}} 
                 className={b.cor}>{b.texto}</Botao>)}
         </DivBotoes>
         </>
@@ -38,7 +38,7 @@ const Botao = styled.button`
     color: #FFFFFF;
     border-radius: 5px;
     padding:5px;
-    
+    cursor:pointer;
     &.vermelho {
         background:#FF3030;
         border: 1px solid #FF3030;

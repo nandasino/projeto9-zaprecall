@@ -17,20 +17,20 @@ function PerguntaAberta(props){
 }
 
 function PerguntaFechada(props){
-    const {nome,index,abrirPergunta}=props
+    const {nome,index,abrirPergunta,check}=props
     return(
-    <PerguntaFechadaDiv onClick={()=>abrirPergunta(index)}>
+    <PerguntaFechadaDiv className={check} onClick={()=>abrirPergunta(index)}>
         {nome}<img src={ImagemPlay}/>
     </PerguntaFechadaDiv> 
     )
 }
 export default function Pergunta(props){
-    const {nome,index,pergunta,resposta,aberto,abrirPergunta,responderPergunta}=props; 
+    const {nome,index,pergunta,resposta,aberto,abrirPergunta,responderPergunta,check}=props; 
     return(
         <>
         {aberto===true? 
         <PerguntaAberta pergunta={pergunta} resposta={resposta} responderPergunta={responderPergunta} index={index} abrirPergunta={abrirPergunta}/>:
-        <PerguntaFechada nome={nome} index={index} abrirPergunta={abrirPergunta}/>
+        <PerguntaFechada nome={nome} index={index} abrirPergunta={abrirPergunta} check={check}/>
         }
         </>
     )
@@ -46,6 +46,7 @@ const PerguntaFechadaDiv= styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor:pointer;
 
     p {
         font-family: 'Recursive';
@@ -54,6 +55,18 @@ const PerguntaFechadaDiv= styled.div`
         font-size: 16px;
         line-height: 19px;
         color: #333333;
+    }
+    &.vermelho{
+        color:#FF3030;
+        text-decoration:line-through;
+    }
+    &.verde{
+        color:#2FBE34;
+        text-decoration:line-through;
+    }
+    &.amarelo{
+        color:#FF922E;;
+        text-decoration:line-through;
     }
 `;
 const PerguntaAbertaDiv=styled.div`
@@ -80,5 +93,6 @@ const PerguntaAbertaDiv=styled.div`
         position: absolute;
         bottom: 10px;
         right: 10px;
+        cursor:pointer;
       }
 `;
