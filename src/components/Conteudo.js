@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import logo from "../img/logo.png"
 import ContainerConcluidos from "./ContainerConcluidos"
@@ -5,6 +6,12 @@ import ContainerPerguntas from "./ContainerPerguntas"
 
 export default function Conteudo(props){
     const {perguntas}=props;
+    const [respondidas,setRespondidas]= useState([]);
+    const quantidadePerguntas= perguntas.length;
+    function responderPergunta(resposta,index){
+      setRespondidas([...respondidas,resposta]);
+      console.log(index);
+  }
 
     return(
         <>
@@ -15,8 +22,9 @@ export default function Conteudo(props){
             </LogoContainer>
             <ContainerPerguntas
              perguntas= {perguntas} 
+             responderPergunta={responderPergunta}
              />
-            <ContainerConcluidos/>
+            <ContainerConcluidos quantidadePerguntas={quantidadePerguntas} respondidas={respondidas.length}/>
         </ScreenContainer>
         </>
     )

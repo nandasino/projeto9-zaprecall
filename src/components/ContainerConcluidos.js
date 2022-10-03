@@ -1,9 +1,11 @@
 import styled from 'styled-components';
-export default function ContainerConcluidos() {
+import react from 'react';
+export default function ContainerConcluidos(props) {
+  const{quantidadePerguntas,respondidas}= props;
     return (
         <>
         <Footer>
-          0/4 CONCLUÍDOS
+          {`${respondidas}/${quantidadePerguntas} CONCLUÍDOS`}
         </Footer>
         </>
     );
